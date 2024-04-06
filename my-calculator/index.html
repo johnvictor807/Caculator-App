@@ -1,13 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="main">
+        <div class="top-section">
+          <h4>calc</h4>
+          <div>
+            <h5>THEME</h5>
+            <div class="radio">
+              <input class="theme1 btnn" type="radio" name="1" />
+              <input class="theme1 btnn" type="radio" name="1" />
+              <input class="theme1 btnn" type="radio" name="1" />
+            </div>
+          </div>
+        </div>
+        <div class="screen">
+          <input id="screen" type="text" />
+        </div>
+        <div class="keypad">
+          <input class="btn btnn" type="button" value="7" />
+          <input class="btn btnn" type="button" value="8" />
+          <input class="btn btnn" type="button" value="9" />
+          <input class="btnn" id="delete" type="button" value="DEL" />
+          <br />
+          <input class="btn btnn" type="button" value="4" />
+          <input class="btn btnn" type="button" value="5" />
+          <input class="btn btnn" type="button" value="6" />
+          <input class="btn btnn" type="button" value="+" />
+          <br />
+          <input class="btn btnn" type="button" value="1" />
+          <input class="btn btnn" type="button" value="2" />
+          <input class="btn btnn" type="button" value="3" />
+          <input class="btn btnn" type="button" value="-" />
+          <br />
+          <input class="btn btnn" type="button" value="." />
+          <input class="btn btnn" type="button" value="0" />
+          <input class="btn btnn" type="button" value="/" />
+          <input class="btn btnn" type="button" value="*" />
+          <br />
+          <input class="btnn" id="clear" type="button" value="RESET" />
+          <input class="btnn" id="equal" type="button" value="=" />
+        </div>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

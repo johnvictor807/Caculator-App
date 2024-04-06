@@ -1,24 +1,42 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// This section is for the calculator app functionality
+const allInputs = document.querySelectorAll(".btn");
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+allInputs.forEach((input) => {
+  input.addEventListener("click", appendScreen);
+});
 
-setupCounter(document.querySelector('#counter'))
+document.querySelector("#delete").addEventListener("click", deleteValue);
+
+document.querySelector("#clear").addEventListener("click", clearScreen);
+
+document.querySelector("#equal").addEventListener("click", evalScreen);
+
+function appendScreen() {
+  document.querySelector("#screen").value += this.value;
+}
+
+function deleteValue() {
+  let screenValue = document.querySelector("#screen");
+
+  screenValue.value = screenValue.value.slice(0, -1);
+}
+
+function clearScreen() {
+  document.querySelector("#screen").value = "";
+}
+
+function evalScreen() {
+  document.querySelector("#screen").value = eval(
+    document.querySelector("#screen").value
+  );
+}
+
+// This is the js codes for the themes
+document
+  .querySelectorAll(".btnn")
+  .forEach((button) =>
+    button.addEventListener(
+      "mouseenter",
+      () => (button.style.cursor = "pointer")
+    )
+  );
