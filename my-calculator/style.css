@@ -34,19 +34,33 @@ body {
 
 .radio {
   margin-left: 7px;
+  height: 16px;
+  border-radius: 10px;
+  background: hsl(223, 31%, 20%);
 }
 
 .radio > input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  /* border: 2px solid #ddd; */
   border-radius: 50%;
   outline: none;
   width: 13px;
   height: 13px;
-  margin: 0 1px;
-  background: #fff no-repeat center center;
+  margin: 1.5px 1px 0 1px;
+  /* background: #fff no-repeat center center; */
+}
+
+.radio > input:where(:active:not(:disabled), :focus) {
+  border-color: #696;
+  outline: none;
+  background: hsl(6, 63%, 50%);
+}
+
+.radio > input:checked {
+  border-color: #696;
+  outline: none;
+  background: hsl(6, 63%, 50%);
 }
 
 #screen {
